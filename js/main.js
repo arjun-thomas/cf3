@@ -86,6 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    // --- Additional FAQ Toggle ---
+    const additionalFaqToggle = document.querySelector('.additional-faq-toggle');
+    const additionalFaqGrid = document.getElementById('additionalFaq');
+    if (additionalFaqToggle && additionalFaqGrid) {
+        additionalFaqToggle.addEventListener('click', () => {
+            additionalFaqGrid.classList.toggle('expanded');
+            const icon = additionalFaqToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        });
+    }
+
     // --- FAQ Accordion ---
     const faqItems = document.querySelectorAll('.faq-item');
 
